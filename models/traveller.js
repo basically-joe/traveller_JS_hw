@@ -34,7 +34,18 @@ return this.journeys.reduce((total, journey) => {
 
 Traveller.prototype.getUniqueModesOfTransport = function () {
 
+const uniqueTransportTypes = [];
+
+for (const journey of this.journeys) {
+  if (uniqueTransportTypes[journey.transport] === journey.transport) {
+    uniqueTransportTypes[journey.transport] += 0;
+  }
+  else {
+    uniqueTransportTypes[journey.transport] = 1;
+  };
 };
 
+return uniqueTransportTypes;
+};
 
 module.exports = Traveller;
