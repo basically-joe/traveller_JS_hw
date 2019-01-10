@@ -33,16 +33,13 @@ Traveller.prototype.calculateTotalDistanceTravelled = function () {
 };
 
 Traveller.prototype.getUniqueModesOfTransport = function () {
-
-
-
   return this.journeys.reduce((prev, cur) => {
     if (prev.indexOf(cur.transport) < 0) prev.push(cur.transport);
-        return prev;
+    return prev;
   }, []);
 };
 
-  // returns count of unique modes of transport keys
+// returns count of unique modes of transport keys
 
 // const uniqueTransportTypes = [];
 //
